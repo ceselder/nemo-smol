@@ -1,0 +1,12 @@
+[Unit]
+Description=nemo-smol ASR server
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/python3 %h/nemo-smol/src/server.py
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=default.target
