@@ -29,9 +29,21 @@ except ImportError:
     print(" evdev not installed, hotkeys disabled")
 
 try:
-    import sounds
+    from . import sounds
 except ImportError:
-    from src import sounds
+    try:
+        import sounds
+    except ImportError:
+        # create dummy sounds module
+        class sounds:
+            @staticmethod
+            def play_start(): pass
+            @staticmethod
+            def play_done(): pass
+            @staticmethod
+            def play_error(): pass
+            @staticmethod
+            def ensure_sounds(): pass
 
 # config
 SERVER = os.environ.get("NEMO_SERVER", "http://127.0.0.1:8765")

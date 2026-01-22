@@ -9,7 +9,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 
 # python deps
 COPY requirements.txt .
-RUN pip install --no-cache-dir fastapi uvicorn soundfile numpy onnx-asr
+RUN pip install --no-cache-dir fastapi uvicorn soundfile numpy onnxruntime onnx-asr python-multipart huggingface_hub
 
 COPY src/server.py src/
 COPY src/__init__.py src/
