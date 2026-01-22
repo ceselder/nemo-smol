@@ -26,7 +26,7 @@
 
 ```bash
 # clone
-git clone https://github.com/YOUR_USERNAME/nemo-smol.git
+git clone https://github.com/ceselder/nemo-smol.git
 cd nemo-smol
 
 # install deps
