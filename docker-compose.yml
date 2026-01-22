@@ -1,0 +1,8 @@
+services:
+  nemo-server:
+    build: .
+    ports:
+      - "8765:8765"
+    restart: unless-stopped
+    environment:
+      - NEMO_PORT=8765
